@@ -1,0 +1,27 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+public class Caminhao : Veiculo
+{
+    public double CapacidadeCarga { get; set; }
+
+    public void ReceberDadosCaminhao()
+    {
+        base.ReceberDados();
+        Console.Write("Digite a capacidade de carga (em toneladas): ");
+        CapacidadeCarga = double.Parse(Console.ReadLine());
+    }
+
+    public override double CalcularCustoManutencao()
+    {
+        return ValorBaseManutencao + 500;
+    }
+
+    public override void MostrarDados()
+    {
+        Console.WriteLine($"Modelo: {Modelo}");
+        Console.WriteLine($"Ano: {Ano}");
+        Console.WriteLine($"Capacidade de Carga: {CapacidadeCarga} toneladas");
+        Console.WriteLine($"Custo de Manutenção: {CalcularCustoManutencao()}");
+    }
+}
