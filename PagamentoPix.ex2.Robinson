@@ -1,0 +1,28 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+public class PagamentoPix : Pagamento
+{
+    public string ChavePix { get; set; }
+
+    public void ReceberDadosPix()
+    {
+        base.ReceberDados();
+        Console.Write("Digite a chave Pix: ");
+        ChavePix = Console.ReadLine();
+    }
+
+    public override void ProcessarPagamento()
+    {
+        Console.WriteLine("Pagamento via Pix aprovado instantaneamente!");
+    }
+
+    public override void MostrarPagamento()
+    {
+        Console.WriteLine($"Cliente: {NomeCliente}");
+        Console.WriteLine($"Valor: {Valor}");
+        Console.WriteLine($"Chave Pix: {ChavePix}");
+        Console.WriteLine("Status: Pagamento aprovado via Pix.");
+    }
+}
+
