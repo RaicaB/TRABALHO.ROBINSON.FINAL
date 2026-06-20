@@ -1,0 +1,28 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+public class Carro : Veiculo
+{
+    public int QuantidadePortas { get; set; }
+
+    public void ReceberDadosCarro()
+    {
+        base.ReceberDados();
+        Console.Write("Digite a quantidade de portas: ");
+        QuantidadePortas = int.Parse(Console.ReadLine());
+    }
+
+    public override double CalcularCustoManutencao()
+    {
+        return ValorBaseManutencao + 200;
+    }
+
+    public override void MostrarDados()
+    {
+        Console.WriteLine($"Modelo: {Modelo}");
+        Console.WriteLine($"Ano: {Ano}");
+        Console.WriteLine($"Quantidade de Portas: {QuantidadePortas}");
+        Console.WriteLine($"Custo de Manutenção: {CalcularCustoManutencao()}");
+    }
+}
+
