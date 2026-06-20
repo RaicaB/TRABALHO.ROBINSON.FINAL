@@ -1,0 +1,29 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+public class Pagamento
+{
+    public string NomeCliente { get; set; }
+    public double Valor { get; set; }
+
+    public virtual void ReceberDados()
+    {
+        Console.Write("Digite o nome do cliente: ");
+        NomeCliente = Console.ReadLine();
+
+        Console.Write("Digite o valor do pagamento: ");
+        Valor = double.Parse(Console.ReadLine());
+    }
+
+    public virtual void ProcessarPagamento()
+    {
+        Console.WriteLine("Pagamento processado com sucesso.");
+    }
+
+    public virtual void MostrarPagamento()
+    {
+        Console.WriteLine($"Cliente: {NomeCliente}");
+        Console.WriteLine($"Valor: {Valor}");
+    }
+}
+
