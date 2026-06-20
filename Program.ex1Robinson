@@ -1,0 +1,19 @@
+﻿using System;
+class Program
+{
+    static void Main(string[] args)
+    {
+        Console.WriteLine("=== Funcionário CLT ===");
+        FuncionarioCLT fclt = new FuncionarioCLT();
+        fclt.ReceberDadosCLT();
+        fclt.MostrarDados();
+
+        Console.WriteLine("\n=== Funcionário Comissionado ===");
+        FuncionarioComissionado fcom = new FuncionarioComissionado();
+        fcom.ReceberDadosComissionado();
+        fcom.MostrarDados();
+
+        Console.ReadKey();
+    }
+}
+
