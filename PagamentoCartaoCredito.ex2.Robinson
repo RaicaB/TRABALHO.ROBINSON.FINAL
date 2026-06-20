@@ -1,0 +1,35 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+public class PagamentoCartaoCredito : Pagamento
+{
+    public int QuantidadeParcelas { get; set; }
+    public double ValorParcela { get; set; }
+
+    public void ReceberDadosCartao()
+    {
+        base.ReceberDados();
+        Console.Write("Digite a quantidade de parcelas: ");
+        QuantidadeParcelas = int.Parse(Console.ReadLine());
+
+        if (QuantidadeParcelas <= 0)
+        {
+            QuantidadeParcelas = 1; 
+        }
+    }
+
+    public override void ProcessarPagamento()
+    {
+        ValorParcela = Valor / QuantidadeParcelas;
+        Console.WriteLine("Pagamento aprovado no cartão de crédito!");
+    }
+
+    public override void MostrarPagamento()
+    {
+        Console.WriteLine($"Cliente: {NomeCliente}");
+        Console.WriteLine($"Valor Total: {Valor}");
+        Console.WriteLine($"Quantidade de Parcelas: {QuantidadeParcelas}");
+        Console.WriteLine($"Valor da Parcela: {ValorParcela}");
+        Console.WriteLine("Status: Pagamento aprovado no cartão.");
+    }
+}
