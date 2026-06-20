@@ -1,0 +1,23 @@
+﻿using System;
+class Program
+{
+    static void Main(string[] args)
+    {
+        Console.WriteLine("=== Carro ===");
+        Carro carro = new Carro();
+        carro.ReceberDadosCarro();
+        carro.MostrarDados();
+
+        Console.WriteLine("\n=== Moto ===");
+        Moto moto = new Moto();
+        moto.ReceberDadosMoto();
+        moto.MostrarDados();
+
+        Console.WriteLine("\n=== Caminhão ===");
+        Caminhao caminhao = new Caminhao();
+        caminhao.ReceberDadosCaminhao();
+        caminhao.MostrarDados();
+
+        Console.ReadKey();
+    }
+}
